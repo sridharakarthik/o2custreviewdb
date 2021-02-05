@@ -1,0 +1,6 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core">
+	<SelectDialog noDataText="No Products Found" title="Select User" search="handleUserSearch" confirm="onUserSelectionAssignment" cancel="handleUserSearchClose"
+		items="{/UserF4Set}">
+		<StandardListItem title="{UserId}" description="{FullName}" type="Active"/>
+	</SelectDialog>
+</core:FragmentDefinition>

@@ -1,0 +1,9 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core">
+	<SegmentedButton id="sb" class="sapUiTinyMarginBegin" selectionChange="onViewSelection" selectedKey="{AppConfig>/Skey}">
+		<items>
+			<SegmentedButtonItem text="AllRequests" key="AllReq"/>
+			<SegmentedButtonItem text="MyRequests" key="MyReq"/>
+			<SegmentedButtonItem text="NotAssigned" key="NotAssign"/>
+		</items>
+	</SegmentedButton>
+</core:FragmentDefinition>

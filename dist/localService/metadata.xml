@@ -1,0 +1,120 @@
+<edmx:Edmx xmlns:edmx="http://schemas.microsoft.com/ado/2007/06/edmx"
+	xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata" xmlns:sap="http://www.sap.com/Protocols/SAPData" Version="1.0">
+	<edmx:DataServices m:DataServiceVersion="2.0">
+		<Schema xmlns="http://schemas.microsoft.com/ado/2008/09/edm" Namespace="ZFC_CIC_APPL_SRV" xml:lang="en" sap:schema-version="1">
+			<EntityType Name="ZtermDebitor" sap:content-version="1">
+				<Key><PropertyRef Name="Kunnr"/></Key><Property Name="Kunnr" Type="Edm.String" Nullable="false" MaxLength="10" sap:unicode="false" sap:label="Customer" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Name1" Type="Edm.String" Nullable="false" MaxLength="35" sap:unicode="false" sap:label="Name" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Ort01" Type="Edm.String" Nullable="false" MaxLength="35" sap:unicode="false" sap:label="City" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Pstlz" Type="Edm.String" Nullable="false" MaxLength="10" sap:unicode="false" sap:label="Postal Code" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="UIM_INFO" Type="Edm.String" sap:label="UIM Info" sap:visible="false" sap:updatable="false"/></EntityType>
+			<EntityType Name="Transactionlist" sap:content-version="1">
+				<Key><PropertyRef Name="Status"/></Key><Property Name="Status" Type="Edm.String" Nullable="false" sap:unicode="false" sap:label="Status" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Txt" Type="Edm.String" Nullable="false" sap:unicode="false" sap:label="Status Text" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="UIM_INFO" Type="Edm.String" sap:label="UIM Info" sap:visible="false" sap:updatable="false"/></EntityType>
+			<EntityType Name="TransactionTable" sap:content-version="1">
+				<Key><PropertyRef Name="Kunnr"/><PropertyRef Name="Matnr"/></Key><Property Name="Kunnr" Type="Edm.String" Nullable="false" MaxLength="10" sap:unicode="false" sap:label="Customer" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Matnr" Type="Edm.String" Nullable="false" MaxLength="40" sap:unicode="false" sap:label="Material" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Maktx" Type="Edm.String" Nullable="false" MaxLength="40" sap:unicode="false" sap:label="Description" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="CurrentUnits" Type="Edm.Decimal" Nullable="false" Precision="13" Scale="3" sap:unicode="false" sap:label="Target Quantity"
+					sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="AvailUnits" Type="Edm.Decimal" Nullable="false" Precision="13" Scale="3" sap:unicode="false" sap:label="Target Quantity"
+					sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="ReducedBy" Type="Edm.Decimal" Precision="13" Scale="3" sap:unicode="false" sap:label="Reduced By" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Remainig" Type="Edm.Decimal" Precision="13" Scale="3" sap:unicode="false" sap:label="Remaining" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="UIM_INFO" Type="Edm.String" sap:label="UIM Info" sap:visible="false" sap:updatable="false"/></EntityType>
+			<EntityType Name="GridHeader" sap:content-version="1">
+				<Key><PropertyRef Name="Kunnr"/></Key><Property Name="Kunnr" Type="Edm.String" Nullable="false" MaxLength="10" sap:unicode="false" sap:label="Customer" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Name" Type="Edm.String" Nullable="false" MaxLength="35" sap:unicode="false" sap:label="Customer Name" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="StartDate" Type="Edm.DateTime" Precision="7" sap:display-format="Date" sap:unicode="false" sap:label="Date"
+					sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Kpi" Type="Edm.Decimal" Nullable="false" Precision="16" Scale="3" sap:unicode="false" sap:label="gross amount LC"
+					sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Qty" Type="Edm.Decimal" Nullable="false" Precision="13" Scale="3" sap:unicode="false" sap:label="Target Quantity"
+					sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="TotKpi" Type="Edm.Decimal" Nullable="false" Precision="16" Scale="3" sap:unicode="false" sap:label="gross amount LC"
+					sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="TotQty" Type="Edm.Decimal" Nullable="false" Precision="13" Scale="3" sap:unicode="false" sap:label="Target Quantity"
+					sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Status" Type="Edm.String" Nullable="false" MaxLength="10" sap:unicode="false" sap:label="Status" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Review" Type="Edm.String" Nullable="false" MaxLength="1" sap:unicode="false" sap:label="Review" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="UIM_INFO" Type="Edm.String" sap:label="UIM Info" sap:visible="false" sap:updatable="false"/><NavigationProperty Name="ItemNav" Relationship="ZFC_CIC_APPL_SRV.GridHeaderItem" FromRole="FromRole_GridHeaderItem"
+					ToRole="ToRole_GridHeaderItem"/></EntityType>
+			<EntityType Name="GridItem" sap:content-version="1">
+				<Key><PropertyRef Name="Kunnr"/><PropertyRef Name="StartDate"/></Key><Property Name="Kunnr" Type="Edm.String" Nullable="false" MaxLength="10" sap:unicode="false" sap:label="Customer" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="StartDate" Type="Edm.DateTime" Nullable="false" Precision="7" sap:unicode="false" sap:label="Date" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Matnr" Type="Edm.String" Nullable="false" MaxLength="40" sap:unicode="false" sap:label="Material" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Maktx" Type="Edm.String" Nullable="false" MaxLength="40" sap:unicode="false" sap:label="Description" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Kpi" Type="Edm.Decimal" Nullable="false" Precision="16" Scale="3" sap:unicode="false" sap:label="gross amount LC"
+					sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Qty" Type="Edm.Decimal" Nullable="false" Precision="13" Scale="3" sap:unicode="false" sap:label="Target Quantity"
+					sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="UIM_INFO" Type="Edm.String" sap:label="UIM Info" sap:visible="false" sap:updatable="false"/></EntityType>
+			<EntityType Name="TransactionType" sap:content-version="1">
+				<Key><PropertyRef Name="Name"/></Key><Property Name="Name" Type="Edm.String" Nullable="false" MaxLength="20" sap:unicode="false" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false" sap:filterable="false"/><Property Name="UIM_INFO" Type="Edm.String" sap:label="UIM Info" sap:visible="false" sap:updatable="false"/></EntityType>
+			<EntityType Name="CustomerDetail" sap:content-version="1">
+				<Key><PropertyRef Name="KUNNR"/><PropertyRef Name="BUKRS"/><PropertyRef Name="YYPARTNER"/></Key><Property Name="KUNNR" Type="Edm.String" Nullable="false" MaxLength="10" sap:unicode="false" sap:label="ERP Number" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false"/><Property Name="NAME1" Type="Edm.String" Nullable="false" MaxLength="15" sap:unicode="false" sap:label="Name" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="BUKRS" Type="Edm.String" Nullable="false" MaxLength="15" sap:unicode="false" sap:label="Company Name" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="YYPARTNER" Type="Edm.String" Nullable="false" MaxLength="10" sap:unicode="false" sap:label="BP Number" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false"/><Property Name="LAND1" Type="Edm.String" Nullable="false" MaxLength="2" sap:unicode="false" sap:label="Country" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false"/><Property Name="REGIO" Type="Edm.String" Nullable="false" MaxLength="10" sap:unicode="false" sap:label="Region" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="ORT01" Type="Edm.String" Nullable="false" MaxLength="10" sap:unicode="false" sap:label="City" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="UIM_INFO" Type="Edm.String" sap:label="UIM Info" sap:visible="false" sap:updatable="false"/></EntityType>
+			<EntityType Name="TransactionTableItem" sap:content-version="1">
+				<Key><PropertyRef Name="Kunnr"/><PropertyRef Name="Vbeln"/><PropertyRef Name="Matnr"/></Key><Property Name="Reducedby" Type="Edm.Decimal" Nullable="false" Precision="13" Scale="3" sap:unicode="false" sap:label="Target Quantity"
+					sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Kunnr" Type="Edm.String" Nullable="false" MaxLength="10" sap:unicode="false" sap:label="Customer" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Remaining" Type="Edm.Decimal" Nullable="false" Precision="13" Scale="3" sap:unicode="false" sap:label="Target Quantity"
+					sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Vbeln" Type="Edm.String" Nullable="false" MaxLength="10" sap:unicode="false" sap:label="Sales Document"
+					sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Matnr" Type="Edm.String" Nullable="false" MaxLength="40" sap:unicode="false" sap:label="Material" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Maktx" Type="Edm.String" Nullable="false" MaxLength="40" sap:unicode="false" sap:label="Description" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="CurrentUnits" Type="Edm.Decimal" Nullable="false" Precision="13" Scale="3" sap:unicode="false" sap:label="Target Quantity"
+					sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="AvailUnits" Type="Edm.Decimal" Nullable="false" Precision="13" Scale="3" sap:unicode="false" sap:label="Target Quantity"
+					sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="UIM_INFO" Type="Edm.String" sap:label="UIM Info" sap:visible="false" sap:updatable="false"/></EntityType>
+			<EntityType Name="CICRequest" sap:content-version="1">
+				<Key><PropertyRef Name="Mandt"/><PropertyRef Name="RequestId"/></Key><Property Name="Mandt" Type="Edm.String" Nullable="false" MaxLength="3" sap:unicode="false" sap:label="Client" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="RequestId" Type="Edm.String" Nullable="false" MaxLength="8" sap:unicode="false" sap:label="Req ID" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="Customer" Type="Edm.String" Nullable="false" MaxLength="10" sap:unicode="false" sap:label="Customer" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false"/><Property Name="Requestor" Type="Edm.String" Nullable="false" MaxLength="12" sap:unicode="false" sap:label="Requestor" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false"/><Property Name="CreatedOn" Type="Edm.DateTime" Nullable="false" Precision="7" sap:unicode="false" sap:label="Date" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false"/><Property Name="Status" Type="Edm.String" Nullable="false" MaxLength="40" sap:unicode="false" sap:label="Status" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false"/><Property Name="AssignedTo" Type="Edm.String" Nullable="false" MaxLength="12" sap:unicode="false" sap:label="AssignedTo"
+					sap:creatable="false" sap:updatable="false" sap:sortable="false"/><Property Name="MissingCreditLinks" Type="Edm.Int32" Nullable="false" sap:unicode="false" sap:label="Missing Links" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="MissingDbLinks" Type="Edm.Int32" Nullable="false" sap:unicode="false" sap:label="Missing Links" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="MissingMaintLinks" Type="Edm.Int32" Nullable="false" sap:unicode="false" sap:label="Missing Links" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="UIM_INFO" Type="Edm.String" sap:label="UIM Info" sap:visible="false" sap:updatable="false"/></EntityType>
+			<Association Name="Transactions" sap:content-version="1"><End Type="ZFC_CIC_APPL_SRV.TransactionTable" Multiplicity="*" Role="FromRole_Transactions"/><End Type="ZFC_CIC_APPL_SRV.TransactionTableItem" Multiplicity="*" Role="ToRole_Transactions"/>
+				<ReferentialConstraint>
+					<Principal Role="FromRole_Transactions"><PropertyRef Name="Matnr"/><PropertyRef Name="Kunnr"/></Principal>
+					<Dependent Role="ToRole_Transactions"><PropertyRef Name="Matnr"/><PropertyRef Name="Kunnr"/></Dependent>
+				</ReferentialConstraint>
+			</Association>
+			<Association Name="GridHeaderItem" sap:content-version="1"><End Type="ZFC_CIC_APPL_SRV.GridHeader" Multiplicity="*" Role="FromRole_GridHeaderItem"/><End Type="ZFC_CIC_APPL_SRV.GridItem" Multiplicity="*" Role="ToRole_GridHeaderItem"/>
+				<ReferentialConstraint>
+					<Principal Role="FromRole_GridHeaderItem"><PropertyRef Name="Kunnr"/></Principal>
+					<Dependent Role="ToRole_GridHeaderItem"><PropertyRef Name="Kunnr"/></Dependent>
+				</ReferentialConstraint>
+			</Association>
+			<EntityContainer Name="ZFC_CIC_APPL_SRV_Entities" m:IsDefaultEntityContainer="true" sap:supported-formats="atom json xlsx"><EntitySet Name="ZtermDebitorSet" EntityType="ZFC_CIC_APPL_SRV.ZtermDebitor" sap:creatable="false" sap:updatable="false"
+				sap:deletable="false" sap:pageable="false" sap:content-version="1"/><EntitySet Name="TransactionlistSet" EntityType="ZFC_CIC_APPL_SRV.Transactionlist" sap:creatable="false" sap:updatable="false"
+				sap:deletable="false" sap:pageable="false" sap:addressable="false" sap:content-version="1"/><EntitySet Name="TransactionTableSet" EntityType="ZFC_CIC_APPL_SRV.TransactionTable" sap:creatable="false" sap:updatable="false"
+				sap:deletable="false" sap:pageable="false" sap:addressable="false" sap:content-version="1"/><EntitySet Name="GridHeaderSet" EntityType="ZFC_CIC_APPL_SRV.GridHeader" sap:creatable="false" sap:updatable="false" sap:deletable="false"
+				sap:pageable="false" sap:content-version="1"/><EntitySet Name="GridItemSet" EntityType="ZFC_CIC_APPL_SRV.GridItem" sap:creatable="false" sap:updatable="false" sap:deletable="false"
+				sap:pageable="false" sap:content-version="1"/><EntitySet Name="TransactionTypeSet" EntityType="ZFC_CIC_APPL_SRV.TransactionType" sap:creatable="false" sap:updatable="false"
+				sap:deletable="false" sap:pageable="false" sap:addressable="false" sap:content-version="1"/><EntitySet Name="CustomerDetailSet" EntityType="ZFC_CIC_APPL_SRV.CustomerDetail" sap:creatable="false" sap:updatable="false"
+				sap:deletable="false" sap:pageable="false" sap:addressable="false" sap:content-version="1"/><EntitySet Name="TransactionTableItemSet" EntityType="ZFC_CIC_APPL_SRV.TransactionTableItem" sap:creatable="false" sap:updatable="false"
+				sap:deletable="false" sap:pageable="false" sap:addressable="false" sap:content-version="1"/><EntitySet Name="CIC_REQUESTSet" EntityType="ZFC_CIC_APPL_SRV.CICRequest" sap:creatable="false" sap:updatable="false" sap:deletable="false"
+				sap:pageable="false" sap:addressable="false" sap:content-version="1"/>
+				<AssociationSet Name="Transactions_AssocSet" Association="ZFC_CIC_APPL_SRV.Transactions" sap:creatable="false" sap:updatable="false"
+					sap:deletable="false" sap:content-version="1"><End EntitySet="TransactionTableSet" Role="FromRole_Transactions"/><End EntitySet="TransactionTableItemSet" Role="ToRole_Transactions"/></AssociationSet>
+				<AssociationSet Name="GridHeaderItemSet" Association="ZFC_CIC_APPL_SRV.GridHeaderItem" sap:creatable="false" sap:updatable="false"
+					sap:deletable="false" sap:content-version="1"><End EntitySet="GridHeaderSet" Role="FromRole_GridHeaderItem"/><End EntitySet="GridItemSet" Role="ToRole_GridHeaderItem"/></AssociationSet>
+			</EntityContainer>
+			<Annotations xmlns="http://docs.oasis-open.org/odata/ns/edm" Target="ZFC_CIC_APPL_SRV.CustomerDetail/KUNNR">
+				<Annotation Term="com.sap.vocabularies.Common.v1.ValueList">
+					<Record><PropertyValue Property="CollectionPath" String="ZtermDebitorSet"/>
+						<PropertyValue Property="Parameters">
+							<Collection>
+								<Record Type="com.sap.vocabularies.Common.v1.ValueListParameterInOut"><PropertyValue Property="LocalDataProperty" PropertyPath="KUNNR"/><PropertyValue Property="ValueListProperty" String="Kunnr"/></Record>
+								<Record Type="com.sap.vocabularies.Common.v1.ValueListParameterDisplayOnly"><PropertyValue Property="ValueListProperty" String="Name1"/></Record>
+							</Collection>
+						</PropertyValue>
+					</Record>
+				</Annotation>
+			</Annotations><atom:link xmlns:atom="http://www.w3.org/2005/Atom" rel="self"
+				href="https://ISD.WDF.SAP.CORP:443/sap/opu/odata/sap/ZFC_CIC_APPL_SRV/$metadata"/><atom:link xmlns:atom="http://www.w3.org/2005/Atom" rel="latest-version"
+				href="https://ISD.WDF.SAP.CORP:443/sap/opu/odata/sap/ZFC_CIC_APPL_SRV/$metadata"/></Schema>
+	</edmx:DataServices>
+</edmx:Edmx>

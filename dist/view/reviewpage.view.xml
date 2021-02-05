@@ -1,0 +1,52 @@
+<mvc:View controllerName="com.sap.o2custreviewdb.controller.reviewpage" xmlns:html="http://www.w3.org/1999/xhtml" xmlns:core="sap.ui.core"
+	xmlns:mvc="sap.ui.core.mvc" xmlns:smartFilterBar="sap.ui.comp.smartfilterbar" xmlns:sv="sap.ui.comp.smartvariants" xmlns:u="sap.ui.unified"
+	xmlns:table="sap.ui.table" xmlns:smartTable="sap.ui.comp.smarttable" xmlns:plugins="sap.ui.table.plugins"
+	xmlns:app="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1" xmlns="sap.f" displayBlock="true" xmlns:m="sap.m">
+	<m:Shell id="shell">
+		<m:App id="app">
+			<m:pages id="page">
+				<DynamicPage >
+					<title>
+						<DynamicPageTitle>
+							<content>
+								<core:Fragment id="fragment" fragmentName="com.sap.o2custreviewdb.view.HeaderSegmentation" type="XML"/>
+							</content>
+						</DynamicPageTitle>
+					</title>
+					<header>
+						<DynamicPageHeader id ="dp" pinnable="true" backgroundDesign="Translucent">
+							<content>
+								<smartFilterBar:SmartFilterBar id="CUSmartFilterBar" useToolbar="true" initialise="onInitSmartFilter" entitySet="CIC_REQUESTSet"
+									filterContainerWidth="10rem" basicSearchFieldName="ORAbasicSearch" header="Selection Criteria"/>
+							</content>
+						</DynamicPageHeader>
+					</header>
+					<content>
+						<smartTable:SmartTable id="ReviewTable" tableType="ResponsiveTable" useExportToExcel="true" showFullScreenButton="true"
+							initialise="arrangeColumns" smartFilterId="CUSmartFilterBar" beforeRebindTable="onBeforeRebindTable" enableAutoBinding="true"
+							initiallyVisibleFields="RequestId,Customer,Requestor,CreatedOn,Status,AssignedTo,MissingCreditLinks,MissingDbLinks,MissingMaintLinks"
+							requestAtLeastFields="RequestId,Customer,Requestor,CreatedOn,Status,AssignedTo,MissingCreditLinks,MissingDbLinks,MissingMaintLinks"
+							beforeExport="onBeforeExport" entitySet="CIC_REQUESTSet" useTablePersonalisation="true" showRowCount="true" header="Total Rows">
+							<smartTable:customToolbar>
+								<m:OverflowToolbar design="Transparent">
+									<m:ToolbarSpacer/>
+									<m:Button type="Ghost" text="AssignToME" visible='{= ${AppConfig>/Skey} === "MyReq" ? false: true}' press="onPress"/>
+									<m:Button type="Ghost" text="AssignToUser" visible='{= ${AppConfig>/Skey} !== "MyReq" ? true: false}' press="onPress"/>
+									<m:Button type="Ghost" text="RemoveAssignment" visible='{= ${AppConfig>/Skey} === "NotAssign" ? false: true}' press="onPress"/>
+									<m:Button type="Ghost" text="Status Change" press="onStaChg"/>
+								</m:OverflowToolbar>
+							</smartTable:customToolbar>
+							<table:Table id="SmartMigTable" alternateRowColors="true" visibleRowCountMode="Auto" selectionMode="MultiToggle">
+								<!--<table:columns>-->
+								<!--	<table:Column width="9rem" filterProperty="RequestId">-->
+								<!--		<m:Label text="Request ID"/>-->
+								<!--	</table:Column>-->
+								<!--</table:columns>-->
+							</table:Table>
+						</smartTable:SmartTable>
+					</content>
+				</DynamicPage>
+			</m:pages>
+		</m:App>
+	</m:Shell>
+</mvc:View>

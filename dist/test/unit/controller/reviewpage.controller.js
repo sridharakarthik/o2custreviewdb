@@ -1,0 +1,1 @@
+sap.ui.define(["com/sap/o2custreviewdb/controller/reviewpage.controller"],function(e){"use strict";QUnit.module("reviewpage Controller");QUnit.test("I should test the reviewpage controller",function(t){var o=new e;o.onInit();t.ok(o)})});

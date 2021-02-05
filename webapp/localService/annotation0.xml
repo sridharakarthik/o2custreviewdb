@@ -1,0 +1,31 @@
+<edmx:Edmx xmlns:edmx="http://docs.oasis-open.org/odata/ns/edmx" Version="4.0">
+	<edmx:Reference Uri="/sap/opu/odata/sap/ZFC_CIC_APPL_SRV/$metadata">
+		<edmx:Include Alias="Metadata" Namespace="ZFC_CIC_APPL_SRV"/>
+	</edmx:Reference>
+	<edmx:Reference Uri="https://wiki.scn.sap.com/wiki/download/attachments/448470968/UI.xml?api=v2">
+		<edmx:Include Alias="UI" Namespace="com.sap.vocabularies.UI.v1"/>
+	</edmx:Reference>
+	<edmx:Reference Uri="https://wiki.scn.sap.com/wiki/download/attachments/448470974/Common.xml?api=v2">
+		<edmx:Include Alias="Common" Namespace="com.sap.vocabularies.Common.v1"/>
+	</edmx:Reference>
+	<edmx:DataServices>
+		<Schema xmlns="http://docs.oasis-open.org/odata/ns/edm" Namespace="o2custreviewdb.localService.annotation0.ZFC_CIC_APPL_SRV">
+			<Annotations Target="Metadata.CICRequest">
+				<Annotation Term="UI.SelectionFields">
+					<Collection>
+						<PropertyPath>Customer</PropertyPath>
+						<PropertyPath>Status</PropertyPath>
+						<PropertyPath>AssignedTo</PropertyPath>
+						<PropertyPath>Requestor</PropertyPath>
+						<PropertyPath>CreatedOn</PropertyPath>
+						<PropertyPath>Indicator</PropertyPath>
+					</Collection>
+				</Annotation>
+			</Annotations>
+			<Annotations Target="Metadata.CICRequest/Indicator">
+				<Annotation Term="Common.FilterDefaultValue" String="A"/>
+				<Annotation Term="UI.HiddenFilter" Bool="true"/>
+			</Annotations>
+		</Schema>
+	</edmx:DataServices>
+</edmx:Edmx>

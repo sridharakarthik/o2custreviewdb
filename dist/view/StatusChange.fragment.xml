@@ -1,0 +1,17 @@
+<core:FragmentDefinition xmlns="sap.m" xmlns:core="sap.ui.core">
+	<Dialog title="Status Change">
+		<Bar>
+			<contentMiddle>
+				<ComboBox id="filterTech" selectionChange="onSemanticSelectChange" width="300px">
+					<core:Item text="Requested"/>
+					<core:Item text="Inprocess"/>
+					<core:Item text="Parked"/>
+					<core:Item text="Resolved"/>
+				</ComboBox>
+			</contentMiddle>
+		</Bar>
+		<endButton>
+			<Button press="onCloseDialog" text="Close"/>
+		</endButton>
+	</Dialog>
+</core:FragmentDefinition>

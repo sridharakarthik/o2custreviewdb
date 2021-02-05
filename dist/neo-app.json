@@ -1,0 +1,114 @@
+{
+  "welcomeFile": "/index.html",
+  "routes": [
+    {
+      "path": "/resources",
+      "target": {
+        "type": "service",
+        "name": "sapui5",
+        "entryPath": "/resources"
+      },
+      "description": "SAPUI5 Resources"
+    },
+    {
+      "path": "/test-resources",
+      "target": {
+        "type": "service",
+        "name": "sapui5",
+        "entryPath": "/test-resources"
+      },
+      "description": "SAPUI5 Resources"
+    },
+    {
+      "path": "/resources",
+      "target": {
+        "type": "service",
+        "name": "sapui5",
+        "entryPath": "/resources"
+      },
+      "description": "SAPUI5 Resources"
+    },
+    {
+      "path": "/test-resources",
+      "target": {
+        "type": "service",
+        "name": "sapui5",
+        "entryPath": "/test-resources"
+      },
+      "description": "SAPUI5 Test Resources"
+    },
+    {
+      "path": "/sap/opu/odata",
+      "target": {
+        "type": "destination",
+        "name": "int_is"
+      },
+      "description": "Destination to ISD Gateway"
+    }
+  ],
+  "sendWelcomeFileRedirect": true,
+  "authenticationMethod": "saml",
+  "securityConstraints": [
+    {
+      "permission": "p_sap_employees",
+      "description": "Only SAPEmployees are allowed to access the application",
+      "protectedPaths": [
+        "/"
+      ]
+    },
+    {
+      "permission": "p_neo-app.json_access",
+      "description": "Protects the Access to the neo-app.json",
+      "protectedPaths": [
+        "neo-app.json"
+      ]
+    }
+  ],
+  "cacheControl": [
+    {
+      "directive": "private",
+      "maxAge": 0,
+      "path": "*html"
+    },
+    {
+      "directive": "private",
+      "maxAge": 0,
+      "path": "sap-ui-cachebuster-info.json"
+    },
+    {
+      "directive": "public",
+      "maxAge": 2628000
+    }
+  ],
+  "headerWhiteList": [
+    "Accept",
+    "Accept-Charset",
+    "Accept-Encoding",
+    "Accept-Language",
+    "Allow",
+    "Cache-Control",
+    "Content-Language",
+    "Content-Location",
+    "Content-Type",
+    "Date",
+    "ETag",
+    "Expires",
+    "If-Match",
+    "If-Modified-Since",
+    "If-None-Match",
+    "If-Unmodified-Since",
+    "Last-Modified",
+    "Link",
+    "Location",
+    "Retry-After",
+    "User-Agent",
+    "Vary",
+    "WWW-Authenticate",
+    "X-CSRF-TOKEN",
+    "slug",
+    "X-CorrelationID",
+    "SAP-PASSPORT",
+    "SAP-Perf-Fesrec",
+    "SAP-Perf-Fesrec-Opt"
+  ]
+}
